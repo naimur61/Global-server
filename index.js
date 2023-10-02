@@ -46,12 +46,13 @@ async function run() {
 
       // Get  Cars By search & page
       app.get('/cars', async (req, res) => {
-         const searchQuery = parseInt(req.query.search) || {};
-         const page = parseInt(req.query.page) || 0;
+         const searchQuery = parseInt(req.query.search);
+         const page = parseInt(req.query.page);
+         console.log(searchQuery, page);
 
-         const cursor = carCollection.find(searchQuery);
-         const cars = await cursor.skip(page * 6).limit(6).toArray();
-         console.log(cars);
+         // const cursor = carCollection.find(searchQuery);
+         // const cars = await cursor.skip(page * 6).limit(6).toArray();
+         // console.log(cars);
 
 
       })
